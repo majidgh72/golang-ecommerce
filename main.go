@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 	"rismoon/pkg/db"
 	"rismoon/pkg/modules"
 
@@ -27,6 +28,6 @@ func main() {
 	modules.Register(app, Database)
 
 	// listen app
-	app.Listen(":3000")
+	app.Listen(":" + os.Getenv("APP_PORT"))
 
 }
